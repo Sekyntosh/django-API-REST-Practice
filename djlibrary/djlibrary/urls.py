@@ -16,13 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 
-def saludar(request):
-	print("mi primera url")
-	return True    
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('prueba', saludar)
+    path('',include('applications.book.urls',namespace="book_apps"))
+
 ]
